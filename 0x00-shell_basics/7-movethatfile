@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "$(find /tmp/betty; mv /tmp/betty /tmp/my_first_directory/)"
+printf "$(mv /tmp/betty /tmp/my_first_directory/)"
