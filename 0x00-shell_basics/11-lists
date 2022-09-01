@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "$(ls -ltra)"
+echo -e "$(ls -la)\n\n" "$(ls .. -la)\n\n" "$(ls -al /boot)" 
