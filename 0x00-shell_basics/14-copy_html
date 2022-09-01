@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "$(cp -v *.html ../)"
+echo "$(cp *.html ../)"
