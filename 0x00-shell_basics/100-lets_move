@@ -1,0 +1,3 @@
+#!/bin/bash
+mv -ap|grep '^[A-Z].*[^/]$'
+
