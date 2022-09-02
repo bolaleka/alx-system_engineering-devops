@@ -1,2 +1,2 @@
 #!/bin/bash
-mv -ap|grep '^[A-Z].*[^/]$'
+mv -ap|grep '^[a-z].*[^/]$'
