@@ -1,1 +1,1 @@
-/etc/default/ufw
+/etc/ufw/before.rules
