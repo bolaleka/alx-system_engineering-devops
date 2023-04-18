@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# stop the nginx service if it's already running
+service nginx stop
+
+# Update the nginx user to be the owner of the necessary directories
+chown -R nginx:nginx /var/log/nginx /var/lib/nginx /etc/nginx
+
+# Edit the nginx configuration file to run as the nginx user and listen on port 8080
+sed -i 's/user www-data/user nginx/g' /etc/nginx/nginx.conf
+sed -i 's/listen 80/listen 8080/g' /etc/nginx/sites-available/default
+
+# Start the nginx service
+service nginx start

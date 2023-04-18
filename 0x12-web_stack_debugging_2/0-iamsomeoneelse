@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Switch to the user passed as an argument and display their username
+sudo -u "$1" whoami
