@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # stop the nginx service if it's already running
 sed -i 's/user\s\+nginx;/user nginx nginx;/' /etc/nginx/nginx.conf
 
