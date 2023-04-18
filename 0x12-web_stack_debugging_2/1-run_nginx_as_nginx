@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 # stop the nginx service if it's already running
-sed -i 's/user\s\+nginx;/user nginx nginx;/' /etc/nginx/nginx.conf
+groupadd nginx
+useradd -g nginx nginx
 
-# Step 2: Modify the Nginx configuration file to listen on all active IPs on port 8080
-sed -i 's/listen\s\+80;/listen 8080;\n    listen [::]:8080;/' /etc/nginx/nginx.conf
-
-# Step 3: Restart the Nginx service to apply the changes
-nginx -s stop && nginx
+chown -R nginx:nginx /var/log/nginx /var/lib/nginx /var/www/html
+sed -i 's/user  nginx;/user nginx nginx;/g' /etc/nginx/nginx.conf
+sed -i 's/listen       80;/listen       8080 default_server;/g' /etc/nginx/conf.d/default.conf
