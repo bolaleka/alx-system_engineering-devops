@@ -2,6 +2,11 @@
 # Change localhost to 127.0.0.2
 # Change facebook.com to 8.8.8.8
 
-cp /etc/hosts ~/hosts.new
-sed -i 's/127.*$/127.0.0.2 localhost\n8.8.8.8 facebook.com/' ~/hosts.new
-cp -f ~/hosts.new /etc/hosts
+# Set the IP address for localhost
+echo "127.0.0.2 localhost" | sudo tee -a /etc/hosts > /dev/null
+
+# Set the IP address for facebook.com
+echo "8.8.8.8 facebook.com" | sudo tee -a /etc/hosts > /dev/null
+
+# Start the Docker container for the checker
+sudo docker run checker
