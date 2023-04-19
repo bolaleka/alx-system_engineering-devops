@@ -3,5 +3,8 @@
 #Configure Nginx so that its HTTP response contains
 #a custom header (on web-01 and web-02)
 
-hostname=ubuntu@100.26.224.13
-sudo sed -i 's/# server_tokens off;/server_tokens off;\n        add_header X-Served-By $hostname;/g' /etc/nginx/nginx.conf
+#hostname=ubuntu@100.26.224.13
+sudo apt-get update
+sudo apt-get install nginx -y
+sudo sed -i '/http {/a \        add_header X-Served-By $hostname;' /etc/nginx/nginx.conf
+sudo service nginx restart
