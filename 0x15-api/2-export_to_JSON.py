@@ -30,12 +30,11 @@ user = response_user.json()
 
 completed_tasks = []
 for todo in todos:
-    if todo.get("completed"):
-        completed_tasks.append({
-            "task": todo.get("title"),
-            "completed": todo.get("completed"),
-            "username": user['username']
-        })
+    completed_tasks.append({
+        "task": todo.get("title"),
+        "completed": todo.get("completed"),
+        "username": user['username']
+    })
 
 data = {str(user_id): completed_tasks}
 
