@@ -3,9 +3,9 @@
 This script retrieves information about an employee's TODO list progress.
 """
 
+import json
 import requests
 import sys
-import json
 
 # Check that an employee ID has been provided as a command-line argument
 if len(sys.argv) != 2:
