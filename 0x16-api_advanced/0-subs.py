@@ -2,6 +2,10 @@
 
 import requests
 
+"""
+ Queries the Reddit API
+"""
+
 
 def number_of_subscribers(subreddit):
     """
